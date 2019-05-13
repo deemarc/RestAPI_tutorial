@@ -1,1 +1,5 @@
 *.pyc
+03_heyMrPostman/Untitled.ipynb
+03_heyMrPostman/.ipynb_checkpoints/Untitled-checkpoint.ipynb
+*venv*
+*.db
