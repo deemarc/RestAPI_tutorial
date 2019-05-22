@@ -49,11 +49,13 @@ class UserRegister(Resource):
     parser.add_argument('password', type=str,
         required=True,
         help="This field cannot be left blank!")
-    def post(self):
-        
-        
-        
+
+    def post(self):   
         data = UserRegister.parser.parse_args()
+
+        if User.find_by_username(data['username']):
+            return {"message": " A User with that username is already exist" }, 400
+            
         connection = sqlite3.connect('data.db')
         cursor = connection.cursor()
 
